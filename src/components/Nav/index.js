@@ -3,23 +3,27 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav(props) {
   const {
-    categories = [],
-    setCurrentCategory,
+    projects = [],
+    setCurrentProject
+    ,
     contactSelected,
-    currentCategory,
+    currentProject
+    ,
     setContactSelected,
   } = props;
 
   useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
+    document.title = capitalizeFirstLetter(currentProject
+      .name);
+  }, [currentProject
+  ]);
 
   return (
     <header className="flex-row px-1">
       <h2>
         <a data-testid="link" href="/">
-          {/* <img src="../react-image.PNG"alt="react"></img>  */}
-          <span role="img" aria-label="camera"> 📸</span> Marques
+          {/* <img src="../../images/logo192.png"alt="react"></img> */}
+          <span role="img" aria-label="cool"> 😎</span> Marques
         </a>
       </h2>
       <nav>
@@ -32,20 +36,27 @@ function Nav(props) {
           <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span onClick={() => setContactSelected(true)}>Contact</span>
           </li>
-          {categories.map((category) => (
+          {projects.map((Project
+          ) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
+                currentProject
+                .name === Project
+                .name && !contactSelected && 'navActive'
                 }`}
-              key={category.name}
+              key={Project
+                .name}
             >
               <span
                 onClick={() => {
-                  setCurrentCategory(category);
+                  setCurrentProject
+                  (Project
+                    );
                   setContactSelected(false);
                 }}
               >
-                {capitalizeFirstLetter(category.name)}
+                {capitalizeFirstLetter(Project
+                  .name)}
               </span>
             </li>
           ))}

@@ -1,129 +1,130 @@
 import React, { useState } from 'react';
 import Modal from '../Modal';
-// import coverImage from 'react';
+// import photo from '../../assets/images/run-buddy.png';
 
-const PhotoList = ({ category }) => {
+const PhotoList = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState();
 
   const [photos] = useState([
     {
-      name: 'dinner-time02.jpg',
-      category: 'portfolio',
+      name: '',
+      project: 'Run Buddy',
+      image: '../../assets/images/run-buddy.png',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'This project requires some work as it was my first time working with HTML and CSS. This project will allow me to see how much my skills have developed.'
     },
     {
       name: 'Grocery booth',
-      category: 'portfolio',
+      project: 'Dinner Time',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Building exterior',
-      category: 'portfolio',
+      project: 'Photo App',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Restaurant table',
-      category: 'portfolio',
+      project: 'commercial',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Cafe interior',
-      category: 'portfolio',
+      project: 'commercial',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Cat green eyes',
-      category: 'portraits',
+      project: 'portraits',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Green parrot',
-      category: 'portraits',
+      project: 'portraits',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Yellow macaw',
-      category: 'portraits',
+      project: 'portraits',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Pug smile',
-      category: 'portraits',
+      project: 'portraits',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Pancakes',
-      category: 'food',
+      project: 'food',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Burrito',
-      category: 'food',
+      project: 'food',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Scallop pasta',
-      category: 'food',
+      project: 'food',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Burger',
-      category: 'food',
+      project: 'food',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Fruit bowl',
-      category: 'food',
+      project: 'food',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Green river',
-      category: 'landscape',
+      project: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Docks',
-      category: 'landscape',
+      project: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Panoramic village by sea',
-      category: 'landscape',
+      project: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Domestic landscape',
-      category: 'landscape',
+      project: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
     {
       name: 'Park bench',
-      category: 'landscape',
+      project: 'landscape',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     }
   ]);
 
-  const currentPhotos = photos.filter(photo => photo.category === category);
+  const currentPhotos = photos.filter(photo => photo.project === project);
 
   const toggleModal = (image, i) => {
     setCurrentPhoto({ ...image, index: i });
@@ -138,7 +139,7 @@ const PhotoList = ({ category }) => {
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
           <img
-            src={require(`../../assets/small${category}/${i}.jpg`).default}
+            src={`../../assets/images/${project}/${i}`}
             alt={image.name}
             className="img-thumbnail mx-1"
             onClick={() => toggleModal(image, i)}

@@ -5,33 +5,33 @@ import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
 function App() {
-  const [categories] = useState([
+  const [projects] = useState([
     {
-      name: 'portfolio',
+      name: 'Portfolio',
       description: 'A few projects I have worked on in the past few months',
     },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+    { name: 'Run Buddy', description: 'My first project' },
+    { name: 'Dinner Time', description: 'My first group projct' },
+    { name: 'Photo App', description: 'My second group project' },
   ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [currentProject, setCurrentProject] = useState(projects[0]);
 
   const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
       <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
+        projects={projects}
+        setCurrentProject={setCurrentProject}
+        currentProject={currentProject}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
       ></Nav>
       <main>
         {!contactSelected ? (
           <>
-            <Gallery currentCategory={currentCategory}></Gallery>
+            <Gallery currentProject={currentProject}></Gallery>
             <About></About>
           </>
         ) : (
