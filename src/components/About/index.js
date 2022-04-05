@@ -1,6 +1,8 @@
 import React from 'react';
 import coverImage from '../../assets/cover/joey.jpg';
+
 function About() {
+  
   return (
     <section className="my-5">
       <h1 id="about">A Bit About Me</h1>

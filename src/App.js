@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
-import Gallery from './components/Gallery';
+import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
       name: 'Portfolio',
       description: 'A few projects I have worked on in the past few months',
     },
-    { name: 'Run Buddy', description: 'My first project' },
-    { name: 'Dinner Time', description: 'My first group projct' },
-    { name: 'Photo App', description: 'My second group project' },
+    // { name: 'Run Buddy', description: 'My first project' },
+    // { name: 'Dinner Time', description: 'My first group projct' },
+    // { name: 'Photo App', description: 'My second group project' },
   ]);
 
   const [currentProject, setCurrentProject] = useState(projects[0]);
@@ -31,7 +31,7 @@ function App() {
       <main>
         {!contactSelected ? (
           <>
-            <Gallery currentProject={currentProject}></Gallery>
+            <Portfolio currentProject={currentProject}></Portfolio>
             <About></About>
           </>
         ) : (
